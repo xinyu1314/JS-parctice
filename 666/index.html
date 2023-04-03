@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="./index.js"></script>
+  </head>
+  <body>
+    <script>
+      // let p = new Promise((resolve, reject) => {
+      //   setTimeout(() => {
+      //     resolve("ok");
+      //     // reject("err");
+      //     // 抛出异常
+      //     // throw "err";
+      //   }, 1000);
+      // });
+      // // p.then(
+      // //   (value) => {
+      // //     console.log(value);
+      // //   },
+      // //   (reason) => {
+      // //     console.warn(reason);
+      // //   }
+      // // );
+      // // const res = p.then(
+      // //   (value) => {
+      // //     console.log(value);
+      // //     // return new Promise((resolve, reject) => {
+      // //     //   resolve("success");
+      // //     // });
+      // //     // throw "fail";
+      // //   },
+      // //   (reason) => {
+      // //     console.warn(reason);
+      // //   }
+      // // );
+      // // console.log(res);
+      // // let res = p.catch((reason) => {
+      // //   console.warn(reason);
+      // // });
+      // // console.log(res);
+      // p.then((value) => {
+      //   console.log(111);
+      //   throw "err";
+      // })
+      //   .then((value) => {
+      //     console.log(222);
+      //   })
+      //   .then((value) => {
+      //     console.log(333);
+      //   })
+      //   .catch((reason) => {
+      //     console.warn(reason);
+      //   });
+      // let p = Promise.resolve("ok");
+      // const p2 = Promise.resolve(
+      //   new Promise((resolve, reject) => {
+      //     // resolve("ok");
+      //     reject("err");
+      //   })
+      // );
+      // const p3 = Promise.resolve(Promise.resolve("aaa"));
+      // console.log(p3);
+      // let p = Promise.reject("ok");
+      // const p2 = Promise.reject(Promise.reject("aaa"));
+      // console.log(p);
+      // console.log(p2);
+      // let p1 = new Promise((resolve, reject) => {
+      //   resolve("aaa");
+      // });
+      // let p2 = Promise.resolve("bbb");
+      // let p3 = Promise.resolve("ccc");
+      // let result = Promise.all([p1, p2, p3]);
+      // console.log(result);
+      let p1 = new Promise((resolve, reject) => {
+        setTimeout(() => {
+          resolve("aaa");
+        }, 1000);
+      });
+      let p2 = Promise.resolve("bbb");
+      let p3 = Promise.resolve("ccc");
+      let result = Promise.race([p1, p2, p3]);
+      console.log(result);
+    </script>
+  </body>
+</html>
